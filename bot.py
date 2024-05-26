@@ -12,12 +12,16 @@ import re
 from os import path
 from time import sleep
 from dotenv import load_dotenv
+from pyrogram import Client
 
-BOT_TOKEN= ""
+API_ID = "your_api_id"
+API_HASH = "your_api_hash"
+BOT_TOKEN = "your_bot_token"  # If you have a bot token
+
+app = Client("bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
+
 real_debird_api =""
 debird_api=""
-API_ID=""
-API_HASH=""
 
 
 debrid_link_sites = ["1dl.net", "1fichier.com", "alterupload.com", "cjoint.net", "desfichiers.com", "dfichiers.com", "megadl.org", 
@@ -92,9 +96,6 @@ debrid_sites = ['1fichier.com', '2shared.com', '4shared.com', 'alfafile.net', 'a
                 'userscloud.com', 'usersdrive.com', 'vidcloud.ru', 'videobin.co', 'vidlox.tv', 'vidoza.net', 'vimeo.com',
                 'vivo.sx', 'vk.com', 'voe.sx', 'wdupload.com', 'wipfiles.net', 'world-files.com', 'worldbytez.com', 'wupfile.com',
                 'wushare.com', 'xubster.com', 'youporn.com', 'youtube.com']
-
-
-app = Client(name="Real-Debird-Bot",api_id=API_ID,api_hash=API_HASH,bot_token=BOT_TOKEN,workers=200,sleep_threshold=10)
 
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO) 
