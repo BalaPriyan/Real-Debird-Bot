@@ -13,11 +13,11 @@ from os import path
 from time import sleep
 from dotenv import load_dotenv
 
-bot_token = ""
+BOT_TOKEN= ""
 real_debird_api =""
 debird_api=""
-api_id=""
-api_hash=""
+API_ID=""
+API_HASH=""
 
 
 debrid_link_sites = ["1dl.net", "1fichier.com", "alterupload.com", "cjoint.net", "desfichiers.com", "dfichiers.com", "megadl.org", 
@@ -94,7 +94,7 @@ debrid_sites = ['1fichier.com', '2shared.com', '4shared.com', 'alfafile.net', 'a
                 'wushare.com', 'xubster.com', 'youporn.com', 'youtube.com']
 
 
-app = Client("bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
+app = Client(name="Real-Debird-Bot",api_id=API_ID,api_hash=API_HASH,bot_token=BOT_TOKEN,workers=200,sleep_threshold=10)
 
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO) 
@@ -293,5 +293,7 @@ async def help(client, message):
 
     await sendMessage(message,help_txt,help_markup)
 
-if __name__ == '__main__':
-    app.run()
+
+
+
+app.run()
