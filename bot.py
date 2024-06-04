@@ -1,4 +1,6 @@
 import logging
+import re
+
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from urllib.parse import unquote, urlparse
@@ -9,7 +11,7 @@ from dotenv import load_dotenv
 from plugins.button_build import ButtonMaker
 from plugins.message_helper import sendMessage
 
-load_dotenv(config.env)
+load_dotenv('config.env')
 
 API_ID = os.getenv("API_ID")
 API_HASH = os.getenv("API_HASH")
